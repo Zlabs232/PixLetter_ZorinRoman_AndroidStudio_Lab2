@@ -31,12 +31,13 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun RoyalInvitationPreview() {
-    PixLetterTheme {
+        PixLetterTheme {
+            GreetingText (message = "Royal Decree!\n Dear Denis\nHis Majesty theKing\nInvites you to a great feast!\nCome to the castle before sunset, \notherwise, you risk losing your head!")
+        }
     }
-}
 
 @Composable
-fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+fun GreetingText(message: String, modifier: Modifier = Modifier) {
     Text(
         text = message
     )
