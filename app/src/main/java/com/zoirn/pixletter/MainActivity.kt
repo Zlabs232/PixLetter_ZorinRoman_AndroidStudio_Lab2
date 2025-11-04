@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
                         from = "From King Arthur",
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(innerPadding) // <- важная строка
+                            .padding(innerPadding)
                     )
                 }
             }
@@ -63,11 +64,12 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             fontSize = 20.sp,
             lineHeight = 40.sp,
             textAlign = TextAlign.Center,
-            modifier = Modifier.fillMaxWidth()
+            color = Color.White
         )
         Text(
             text = from,
             fontSize = 24.sp,
+            color = Color.White,
             modifier = Modifier
                 .padding(16.dp)
                 .align(Alignment.End)
@@ -78,9 +80,18 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
     val image = painterResource(R.drawable.pixelcasstle)
-    Image(
-        painter = image,
-        contentDescription = null
-    )
+    Box(modifier) {
+        Image(
+            painter = image,
+            contentDescription = null
+        )
+        GreetingText(
+            message = message,
+            from = from,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
+        )
+    }
 
 }
