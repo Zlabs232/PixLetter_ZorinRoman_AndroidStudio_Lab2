@@ -6,7 +6,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -57,10 +59,18 @@ fun RoyalInvitationPreview() {
 @Composable
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
     Column(
-        modifier = modifier,
-        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+            .border(
+                width = 2.dp,
+                color = Color.White,
+                shape = RoundedCornerShape(12.dp)
+            )
+            .fillMaxSize()
+            .padding(10.dp),
+        verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        InvitationTitle()
         Text(
             text = message,
             fontSize = 20.sp,
@@ -98,5 +108,17 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
                 .padding(8.dp)
         )
     }
+}
 
+@Composable
+fun InvitationTitle (modifier: Modifier = Modifier) {
+    Text(
+        text = stringResource (id = R.string.invitation_title),
+        fontSize = 28.sp,
+        color = Color.Yellow,
+        textAlign = TextAlign.Center,
+        modifier = modifier
+            .fillMaxSize()
+            .padding(bottom = 16.dp)
+    )
 }
