@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -29,8 +30,8 @@ class MainActivity : ComponentActivity() {
             PixLetterTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     GreetingText(
-                        message = "Royal Decree!\nDear Denis\nHis Majesty the King\nInvites you to a great feast!\nCome to the castle before sunset,\notherwise, you risk losing your head!",
-                        from = "From King Arthur",
+                        message = stringResource(com.zoirn.pixletter.R.string.king_message_text),
+                        from = stringResource(com.zoirn.pixletter.R.string.from_king_arthur),
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(innerPadding)
@@ -46,8 +47,8 @@ class MainActivity : ComponentActivity() {
 fun RoyalInvitationPreview() {
     PixLetterTheme {
         GreetingImage(
-            message = "Royal Decree!\nDear Denis\nHis Majesty the King\nInvites you to a great feast!\nCome to the castle before sunset,\notherwise, you risk losing your head!",
-            from = "From King Arthur",
+            message = stringResource(com.zoirn.pixletter.R.string.king_message_text),
+            from = stringResource(com.zoirn.pixletter.R.string.from_king_arthur),
             modifier = Modifier.padding(8.dp)
         )
     }

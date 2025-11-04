@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PixLetter</string>
+    <string name="king_message_text">Royal Decree!\nDear Denis\nHis Majesty the King\nInvites you to a great feast!\nCome to the castle before sunset,\notherwise, you risk losing your head!</string>
+    <string name="from_king_arthur">From King Arthur</string>
 </resources>
